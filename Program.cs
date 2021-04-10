@@ -1,17 +1,28 @@
 ﻿using System;
 
-namespace _02_ByteBank
+namespace _03_ByteBank
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			ContaCorrente conta = new ContaCorrente();
+			ContaCorrente contaDaGabriela = new ContaCorrente();
+			contaDaGabriela.titular = "Gabriela";
+			contaDaGabriela.agencia = 863;
+			contaDaGabriela.numero = 863452;
 
-			conta.titular = "Gabriela";
+			ContaCorrente contaDaGabrielaCosta = new ContaCorrente();
+			contaDaGabriela.titular = "Gabriela";
+			contaDaGabriela.agencia = 863;
+			contaDaGabriela.numero = 863452;
 
-			Console.WriteLine(conta.titular);
-			Console.WriteLine(conta.saldo);
+			Console.WriteLine(contaDaGabrielaCosta == contaDaGabriela);
+
+			contaDaGabriela.saldo = 300;
+			Console.WriteLine(contaDaGabriela.saldo);
+			Console.WriteLine(contaDaGabrielaCosta.saldo);
+
+			contaDaGabriela.saldo -= 100;
 
 			Console.ReadLine();
 		}
